@@ -1,8 +1,14 @@
 import Vue from 'vue'
 import App from './App'
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
-})
+import routes from './routes.js'
+import VueRouter from 'vue-router';
+
+
+Vue.use(VueRouter);
+
+/* 路由功能 */
+var router = new VueRouter();
+routes(router)
+
+router.start(App, '#app');
